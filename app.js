@@ -1,9 +1,17 @@
-import { refreshItems, addTodo } from './common.js';
+import { removeTodo, addTodo } from './common.js';
 
-refreshItems()
+const ul = document.querySelector('ul');
 
 const button = document.querySelector('button');
 
-button.addEventListener('click', () => {
-    addTodo();
+/**
+ * Remove existing "TODO".
+ */
+ul.addEventListener('click', event => {
+    removeTodo(event.target);
 });
+
+/**
+ * Add new "TODO".
+ */
+button.addEventListener('click', addTodo);

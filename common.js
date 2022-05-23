@@ -1,24 +1,23 @@
-export function refreshItems() {
-    let items = document.querySelectorAll('li');
-    removeOnClick(items);
-}
-
 const ul = document.querySelector('ul');
 
-const newTodo = document.querySelector('[name="new-todo"]');
+const inputTodo = document.querySelector('[name="new-todo"]');
 
-function removeOnClick(items) {
-    items.forEach(item => {
-        item.addEventListener('click', event => {
-            event.target.remove();
-        });
-    });
+/**
+ * Remove element if its tag name is "li".
+ * @param {event.target} item 
+ */
+export const removeTodo = item => {
+    if(item.tagName == "LI"){
+        item.remove();
+    }
 }
 
-export function addTodo() {
+/**
+ * Add new list item based on text input.
+ */
+export const addTodo = () => {
     const li = document.createElement('li');
-    li.textContent = `${newTodo.value}`;
+    li.textContent = `${inputTodo.value}`;
     ul.appendChild(li);
-    refreshItems();
-    newTodo.value = '';
+    inputTodo.value = '';
 }
