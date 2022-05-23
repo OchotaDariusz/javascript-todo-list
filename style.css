@@ -1,0 +1,22 @@
+h1 {
+    text-align: center;
+}
+
+li {
+    list-style-type: none;
+    max-width: 200px;
+    padding: 8px;
+    margin: 8px auto;
+    background: #eee;
+    border: 1px dotted #ddd;
+    cursor: pointer;
+}
+
+li:hover {
+    background: #ddd;
+}
+
+div {
+    margin: 8px;
+    text-align: center;
+}
